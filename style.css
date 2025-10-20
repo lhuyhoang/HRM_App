@@ -1,0 +1,273 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #f8f9fa;
+    --border-color: #dee2e6;
+    --text-color: #212529;
+    --danger-color: #dc3545;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+#toast-container {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 1100;
+    pointer-events: none;
+}
+
+.toast-notification {
+    min-width: 220px;
+    max-width: 320px;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    color: #fff;
+    background-color: rgba(33, 37, 41, 0.92);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: auto;
+}
+
+.toast-notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast-notification.toast-success {
+    background-color: var(--primary-color);
+}
+
+.toast-notification.toast-error {
+    background-color: var(--danger-color);
+}
+
+.toast-notification.toast-info {
+    background-color: #495057;
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    z-index: 1100;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-dialog {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    max-width: 420px;
+    width: calc(100% - 2rem);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+    border-top: 4px solid var(--border-color);
+}
+
+.modal-dialog.modal-success {
+    border-top-color: var(--primary-color);
+}
+
+.modal-dialog.modal-error {
+    border-top-color: var(--danger-color);
+}
+
+.modal-dialog.modal-info {
+    border-top-color: #495057;
+}
+
+.modal-dialog h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.modal-dialog p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.modal-dialog .modal-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+.modal-dialog .modal-actions button {
+    min-width: 96px;
+}
+
+.modal-dialog .modal-actions .secondary {
+    background: #adb5bd;
+    color: #fff;
+}
+
+.modal-dialog .modal-actions .primary {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+#app-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#auth-container {
+    width: 100%;
+}
+
+.form-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#main-dashboard {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.dashboard-body {
+    display: flex;
+    flex-grow: 1;
+}
+
+#sidebar {
+    width: 220px;
+    background-color: #fff;
+    padding: 1rem;
+    border-right: 1px solid var(--border-color);
+}
+
+#sidebar h2 {
+    margin-top: 0;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+#sidebar ul li a {
+    display: block;
+    padding: 0.75rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    border-radius: 4px;
+}
+
+#sidebar ul li a:hover {
+    background-color: var(--secondary-color);
+}
+
+#app-content {
+    flex-grow: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+button {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+}
+
+button.danger {
+    background-color: var(--danger-color);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th,
+td {
+    border: 1px solid var(--border-color);
+    padding: 0.75rem;
+    text-align: left;
+}
+
+th {
+    background-color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    .dashboard-body {
+        flex-direction: column;
+    }
+
+    #sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+}

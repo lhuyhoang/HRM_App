@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Quản Lý Nhân Sự</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        <div id="auth-container"></div>
+        <div id="main-dashboard" class="hidden">
+            <header>
+                <h1>HRM Dashboard</h1>
+                <button id="logout-btn">Đăng xuất</button>
+            </header>
+            <div class="dashboard-body">
+                <nav id="sidebar">
+                    <h2>Menu</h2>
+                    <ul>
+                        <li><a href="#" data-module="dashboard">Trang chủ</a></li>
+                        <li><a href="#" data-module="addEmployee">Thêm nhân viên</a></li>
+                        <li><a href="#" data-module="searchEmployee">Tìm kiếm & Sửa/Xóa</a></li>
+                        <li><a href="#" data-module="departments">Quản lý Phòng ban</a></li>
+                        <li><a href="#" data-module="positions">Quản lý Vị trí</a></li>
+                        <li><a href="#" data-module="salary">Bảng lương</a></li>
+                        <li><a href="#" data-module="attendance">Chấm công</a></li>
+                        <li><a href="#" data-module="leaves">Quản lý Nghỉ phép</a></li>
+                        <li><a href="#" data-module="performance">Đánh giá Hiệu suất</a></li>
+                    </ul>
+                </nav>
+                <main id="app-content">
+                    <h2>Chào mừng đến với hệ thống HRM!</h2>
+                    <p>Chọn chức năng từ menu bên trái để bắt đầu.</p>
+                </main>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="src/app.js"></script>
+</body>
+</html>
